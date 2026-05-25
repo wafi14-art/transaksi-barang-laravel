@@ -28,11 +28,14 @@ class Transaksi extends Model
         'kembalian',
         'status',
         'catatan',
+<<<<<<< HEAD
         'tgl_transaksi',
     ];
 
     protected $casts = [
         'tgl_transaksi' => 'datetime',
+=======
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
     ];
 
     public function pelanggan()

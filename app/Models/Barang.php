@@ -24,8 +24,11 @@ class Barang extends Model
         'stok',
         'harga_jual',
         'deskripsi',
+<<<<<<< HEAD
         'image',
         'thumbnail',
+=======
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
     ];
 
     public function detailTransaksi()

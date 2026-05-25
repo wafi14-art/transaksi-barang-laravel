@@ -41,7 +41,11 @@ class AuthController extends Controller
         session([
             'user_id'   => $user->id,
             'user_name' => $user->name,
+<<<<<<< HEAD
             'user_role' => $user->role ?? 'admin',
+=======
+            'user_role' => $user->role,
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
         ]);
 
         return redirect()->route('dashboard')
@@ -55,4 +59,8 @@ class AuthController extends Controller
         return redirect()->route('login')
                          ->with('success', 'Berhasil logout.');
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6

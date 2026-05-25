@@ -8,7 +8,10 @@ use App\Models\Transaksi;
 use App\Models\DetailTransaksi;
 use App\Models\Pelanggan;
 use App\Models\Barang;
+<<<<<<< HEAD
 use Carbon\Carbon;
+=======
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
 
 class TransaksiController extends Controller
 {
@@ -36,7 +39,11 @@ class TransaksiController extends Controller
         $pelanggan = Pelanggan::orderBy('nama')->get();
         $barang    = Barang::where('stok', '>', 0)->orderBy('nama_barang')->get();
 
+<<<<<<< HEAD
         return view('transaksi.form-fixed', compact('pelanggan', 'barang'));
+=======
+        return view('transaksi.form', compact('pelanggan', 'barang'));
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
     }
 
     // Simpan transaksi baru (dengan detail item)
@@ -44,7 +51,10 @@ class TransaksiController extends Controller
     {
         $request->validate([
             'pelanggan_id'     => 'required|exists:pelanggan,id',
+<<<<<<< HEAD
             'tgl_transaksi'    => 'required|date',
+=======
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
             'bayar'            => 'required|numeric|min:0',
             'barang_id'        => 'required|array|min:1',
             'barang_id.*'      => 'exists:barang,id',
@@ -52,8 +62,11 @@ class TransaksiController extends Controller
             'jumlah.*'         => 'required|integer|min:1',
         ], [
             'pelanggan_id.required' => 'Pilih pelanggan terlebih dahulu.',
+<<<<<<< HEAD
             'tgl_transaksi.required' => 'Tanggal transaksi wajib diisi.',
             'tgl_transaksi.date' => 'Format tanggal transaksi tidak valid.',
+=======
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
             'barang_id.required'    => 'Tambahkan minimal 1 barang.',
             'bayar.required'        => 'Nominal bayar wajib diisi.',
         ]);
@@ -92,6 +105,7 @@ class TransaksiController extends Controller
 
             // Buat header transaksi
             $transaksi = Transaksi::create([
+<<<<<<< HEAD
                 'no_transaksi'    => Transaksi::generateNoTransaksi(),
                 'pelanggan_id'    => $request->pelanggan_id,
                 'user_id'         => session('user_id'),
@@ -101,6 +115,16 @@ class TransaksiController extends Controller
                 'kembalian'       => $bayar - $totalHarga,
                 'status'          => 'selesai',
                 'catatan'         => $request->catatan,
+=======
+                'no_transaksi' => Transaksi::generateNoTransaksi(),
+                'pelanggan_id' => $request->pelanggan_id,
+                'user_id'      => session('user_id'),
+                'total_harga'  => $totalHarga,
+                'bayar'        => $bayar,
+                'kembalian'    => $bayar - $totalHarga,
+                'status'       => 'selesai',
+                'catatan'      => $request->catatan,
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
             ]);
 
             // Simpan detail & kurangi stok

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 
@@ -18,3 +19,11 @@ require __DIR__.'/../vendor/autoload.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $app->handleRequest(Request::capture());
+=======
+require_once __DIR__ . '/../autoload.php';
+
+session_start();
+
+echo '<h1>Transaksi Barang</h1>';
+echo '<p>Autoload lokal sudah diatur. Arahkan ke controllers dan views secara manual.</p>';
+>>>>>>> be5b8eccddf63807057a578f2e624d09e99c65b6
