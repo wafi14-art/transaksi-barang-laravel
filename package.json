@@ -1,0 +1,14 @@
+{
+  "name": "transaksi-barang",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Modern inventory management system with SaaS-style dashboard",
+  "scripts": {
+    "dev": "node -e \"console.log('Project ini tidak memakai Vite atau Webpack. Jalankan aplikasinya lewat PHP/web server, bukan npm run dev.')\"",
+    "build": "node -e \"console.log('Tidak ada proses build frontend untuk project ini.')\""
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.0"
+  }
+}
